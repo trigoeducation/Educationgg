@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TriGO Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #222;
+      transition: all 0.4s ease;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.4s;
+      flex-wrap: wrap;
+    }
+
+    .dark-mode header {
+      background-color: rgba(18, 18, 18, 0.9);
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      padding: 0.4rem 1rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: gray;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo {
+        margin-bottom: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      .toggle-btn {
+        align-self: flex-end;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://i.postimg.cc/y69MMRf1/IMG-1101.png" alt="TriGO Logo" />
+    </div>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#mentorship">MENTORSHIP</a>
+      <a href="#store">STORE</a>
+      <a href="#book">BOOK</a>
+      <a href="#group">GROUP</a>
+      <a href="#channel">CHANNEL</a>
+    </nav>
+    <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome to TriGO Education</h1>
+    <p>Empowering your learning journey through mentorship, resources and community.</p>
+  </section>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
