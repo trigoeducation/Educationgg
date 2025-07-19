@@ -655,6 +655,34 @@
   max-width: 240px;
   margin: 0 auto 8px;
 }
+.channel-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.channel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.channel-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.channel-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
 </style>
 </head>
 <body>
@@ -663,40 +691,38 @@
       <img src="https://i.postimg.cc/CLDMhbD5/IMG-1101.png" alt="TriGO Logo">
       <span>TriGO Education</span>
     </div>
+    
     <ul>
-  <li class="active" onclick="showSection(event, 'mentorship')">
+    <li class="active" onclick="showSection(event, 'mentorship')">
     <i class="fas fa-chalkboard-teacher"></i> Mentorship
-  </li>
-  <li onclick="showSection(event, 'shop')">
+    </li>
+    <li onclick="showSection(event, 'shop')">
     <i class="fas fa-shopping-cart"></i> Shop
-  </li>
-  <li onclick="showSection(event, 'books')">
+    </li>
+    <li onclick="showSection(event, 'books')">
     <i class="fas fa-book"></i> Books
-  </li>
-  <li onclick="showSection(event, 'groups')">
+    </li>
+    <li onclick="showSection(event, 'groups')">
     <i class="fas fa-users"></i> Groups
-  </li>
-  <li onclick="showSection(event, 'channel')">
+    </li>
+    <li onclick="showSection(event, 'channel')">
     <i class="fas fa-bullhorn"></i> Channel
-  </li>
-
-  <!-- New Sections -->
-  <li onclick="showSection(event, 'trigo-news')">
+    </li>
+    <!-- New Sections -->
+    <li onclick="showSection(event, 'trigo-news')">
     <i class="fas fa-newspaper"></i> TriGO NEWS
-  </li>
-  <li onclick="showSection(event, 'nta-news')">
+    </li>
+    <li onclick="showSection(event, 'nta-news')">
     <i class="fas fa-info-circle"></i> NTA NEWS
-  </li>
- <li onclick="showSection(event, 'official')">
+    </li>
+    <li onclick="showSection(event, 'official')">
     <i class="fas fa-shield-alt"></i> Official
-  </li>
-  <li onclick="showSection(event, 'help-center')">
+    </li>
+    <li onclick="showSection(event, 'help-center')">
     <i class="fas fa-hands-helping"></i> Help Center
-  </li>
- 
-</ul>
-
-      </div>
+    </li>
+    </ul>
+</div>
 
     <div class="content">
     <div id="mentorship" class="section active" style="position: relative;">
@@ -1370,22 +1396,43 @@
 
 
 
-
-
-
+</div>
 
     
+<div id="channel" class="section">
+  <h1>Channel</h1>
+  <p>Announcements and updates from the TriGO team.</p>
+  
+  <a href="https://t.me/+nET5vlocYrVhMzU9" target="_blank" class="channel-button">
+    <img src="https://i.postimg.cc/26H8zQ8K/photo-2025-07-19-15-17-35.jpg" alt="TriGO Advertisement" class="channel-logo">
+    <span class="channel-name">TriGO Advertisement</span>
+  </a>
+<a href="https://t.me/+L1kv_R9ZwXQ0ZTI1" target="_blank" class="channel-button">
+    <img src="https://i.postimg.cc/L438DZd7/photo-2025-07-19-15-24-07.jpg" alt="TriGO Education" class="channel-logo">
+    <span class="channel-name">TriGO Education</span>
+  </a>
+</div>
 
+<div id="trigo-news" class="section">
+  <h1>TriGO NEWS</h1>
+  <p>Announcements and updates from the TriGO team.</p>
+</div>
 
-    </div>
+<div id="nta-news" class="section">
+  <h1>NTA NEWS</h1>
+  <p>Announcements and updates from the TriGO team.</p>
+</div>
 
-    <div id="channel" class="section">
-      <h1>Channel</h1>
-      <p>Announcements and updates from the TriGO team.</p>
+<div id="official" class="section">
+  <h1>Official</h1>
+  <p>Announcements and updates from the TriGO team.</p>
+</div>
 
-    </div>
+<div id="help-center" class="section">
+  <h1>Help Center</h1>
+  <p>Announcements and updates from the TriGO team.</p>
+</div>
 
-  </div>
 
   <div class="footer">
     © 2025 TriGO | Learn. Practice. Succeed.
