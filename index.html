@@ -707,21 +707,36 @@ overflow: hidden; // or auto
   max-width: 380px;
   width: 100%;
   margin: auto;
-  background: #121219;
+  background: #2C2C3E;
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 0 25px #00fff2b3;
+  box-shadow: 0 0 25px #d98880;
   text-align: center;
 }
 
 #help-center h1 {
-  font-size: 22px;
+  font-size: 17px;
   margin: 10px 0;
-  color: #00fff2;
+  color: transparent;
+  background-image: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: textFlow 5s linear infinite;
 }
 
+@keyframes textFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
 .help-logo {
-  width: 180px;
+  width: 321px;
   height: 180px;
   margin: 0 auto 20px;
   background: radial-gradient(circle at center, #00f2ff 0%, #8b00ff 100%);
@@ -1565,7 +1580,7 @@ overflow: hidden; // or auto
 <section id="help-center" class="section">
   <h1>🆘 Stuck Somewhere? TriGO Help Centre Got You!</h1>
   <div class="help-logo">
-    <img src="https://i.postimg.cc/hj4Q1w1X/Copilot-20250719-194630.png" alt="TeamTriGO Logo" />
+    <img src="https://i.postimg.cc/bvs21LVV/Copilot-20250719-214016.png" alt="TeamTriGO Logo" />
   </div>
   <p class="help-text">Find quick solutions — all in one place for the NEET/JEE community.</p>
   <div class="highlight">🚨 Get Instant Support with TriGO Help Centre</div>
