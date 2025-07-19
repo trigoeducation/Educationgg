@@ -922,7 +922,7 @@ overflow: hidden; // or auto
     <i class="fas fa-info-circle"></i> NTA NEWS
     </li>
     <li onclick="showSection(event, 'official')">
-    <i class="fas fa-shield-alt"></i> Official
+    <i class="fas fa-shield-alt"></i> Official Notice
     </li>
     <li onclick="showSection(event, 'help-center')">
     <i class="fas fa-hands-helping"></i> Help Center
@@ -1788,17 +1788,29 @@ overflow: hidden; // or auto
 
     <p class="criteria">
       <strong>Eligibility Criteria:</strong><br>
-      This application is open only to <em>female NEET droppers</em> who have strong command over the syllabus and can confidently solve doubts.
+      This application is open only to <em>female NEET droppers</em> who have a strong command over the syllabus and are capable of solving doubts confidently.
     </p>
 
     <label>Full Name:</label>
     <input type="text" name="Full Name" required>
 
-    <label>Class:</label>
-    <input type="text" name="Class" required>
+    <label>Telegram Name (Display Name):</label>
+    <input type="text" name="Telegram Name" required>
 
-    <label>Telegram ID:</label>
+    <label>Your Class / Track:</label>
+    <select name="Class" required>
+      <option value="" disabled selected>Select your track</option>
+      <option value="NEET">NEET</option>
+      <option value="JEE">JEE</option>
+      <option value="MBBS">MBBS</option>
+      <option value="IITIAN">IITIAN</option>
+    </select>
+
+    <label>Telegram ID (Username):</label>
     <input type="text" name="Telegram ID" required>
+
+    <label>Your Gmail ID:</label>
+    <input type="email" name="Gmail ID" required>
 
     <label>Which NEET Drop Are You Taking?</label>
     <input type="text" name="NEET Drop" required>
@@ -1806,7 +1818,7 @@ overflow: hidden; // or auto
     <label>Why do you want to become an Admin?</label>
     <textarea name="Reason" rows="4" required></textarea>
 
-    <!-- Hidden FormSubmit settings -->
+    <!-- FormSubmit Settings -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_subject" value="Girls Admin Form – New Submission">
@@ -1816,6 +1828,8 @@ overflow: hidden; // or auto
     <button type="submit">🚀 Submit Application</button>
   </form>
 </div>
+
+
 
 
 <section id="help-center" class="section">
