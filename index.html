@@ -275,8 +275,18 @@
     function filterBatches() {
       const query = input.value.toLowerCase().trim();
       const cards = document.querySelectorAll(".searchable-card");
-      let matchFound = false;
 
+      // Remove any existing popup
+      const existingPopup = document.querySelector(".popup-message");
+      if (existingPopup) existingPopup.remove();
+
+      // 🚫 Early popup for <2 letter queries
+      if (query.length < 2) {
+        showLengthPopup();
+        return;
+      }
+
+      let matchFound = false;
       cards.forEach(card => {
         const title = card.querySelector("h3");
         if (title && title.textContent.toLowerCase().includes(query)) {
@@ -287,24 +297,32 @@
         }
       });
 
-      const existingPopup = document.querySelector(".popup-message");
-      if (existingPopup) existingPopup.remove();
-
-      if (!matchFound && query !== "") {
-        showPopup(query);
+      if (!matchFound) {
+        showSearchPopup(query);
       }
     }
 
-    function showPopup(query) {
+    function showLengthPopup() {
+      const popup = document.createElement("div");
+      popup.className = "popup-message";
+      popup.innerHTML = `
+        <h4>Input Too Short</h4>
+        <p>Please enter at least <strong>2 letters</strong> to search.</p>
+        <small>Example: "Yak", "Sha", etc.</small>
+      `;
+      document.querySelector(".container").appendChild(popup);
+      setTimeout(() => popup.remove(), 3000);
+    }
+
+    function showSearchPopup(query) {
       const popup = document.createElement("div");
       popup.className = "popup-message";
       popup.innerHTML = `
         <h4>Sorry!</h4>
-        <p>We couldn't find any matches for"<strong>${query}</strong>"</p>
+        <p>We couldn't find any matches for "<strong>${query}</strong>"</p>
         <small>Please try searching with another item..</small>
       `;
       document.querySelector(".container").appendChild(popup);
-
       setTimeout(() => popup.remove(), 3000);
     }
   });
