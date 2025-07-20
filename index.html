@@ -236,34 +236,32 @@
 
     <!-- ✅ BATCH SECTION -->
 <div id="batchContainer">
-
-  <!-- ✅ YAKEEN NEET 2026 -->
+  <!-- ✅ Yakeen NEET 2026 -->
   <div class="batch-card batch-card-flex searchable-card">
     <img src="https://i.postimg.cc/SRtZnW6C/831f7807-c432-4f4b-8f55-f4dd61e6db0f.jpg" alt="Yakeen NEET 2026 Banner" class="batch-image" />
     <div class="batch-details">
       <h3>Yakeen NEET 2026</h3>
       <p>Start: 14 April 2025 | End: 05 March 2026</p>
       <p>Flat 24% OFF on this batch | Limited Time Offer!</p>
-      <p>Actual Price : ₹4,999</p>
+      <p>Actual Price: ₹4,999</p>
       <button onclick="openPopup()" class="cta-button">Enroll Now</button>
     </div>
   </div>
 
-  <!-- ✅ YAKEEN NEET 2.0 2026 -->
+  <!-- ✅ Yakeen NEET 2.0 2026 -->
   <div class="batch-card batch-card-flex searchable-card">
     <img src="https://i.postimg.cc/fWvzy5Vm/6d9e4207-7469-4bdb-aeb4-6a43ea04591d.jpg" alt="Yakeen NEET 2.0 2026 Banner" class="batch-image" />
     <div class="batch-details">
       <h3>Yakeen NEET 2.0 2026</h3>
       <p>Start: 19 May 2026 | End: 30 June 2026</p>
       <p>Flat 22.45% OFF on this batch | Limited Time Offer!</p>
-      <p>Actual Price : ₹4,900</p>
+      <p>Actual Price: ₹4,900</p>
       <button onclick="openPopup2()" class="cta-button">Enroll Now</button>
     </div>
   </div>
-
 </div>
 
-<!-- ✅ MODAL 1 -->
+<!-- ✅ MODAL POPUP 1 -->
 <div id="popup" class="popup-overlay">
   <div class="popup-content">
     <span onclick="closePopup()" class="close-btn">&times;</span>
@@ -275,8 +273,7 @@
 
     <form id="formArea" action="https://formsubmit.co/teamtrigoofficial@gmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://trigoneetjee.netlify.app?success=true">
+      <input type="hidden" name="_autoresponse" value="Thank you for submitting your form. We'll contact you soon.">
 
       <label>Real Name:</label>
       <input type="text" name="Real Name" required>
@@ -299,12 +296,12 @@
       <label>Upload Payment Screenshot:</label>
       <input type="file" name="Payment Screenshot" accept="image/*" required>
 
-      <button type="submit" class="cta-button full">Submit</button>
+      <button type="submit" name="submit" class="cta-button full">Submit</button>
     </form>
   </div>
 </div>
 
-<!-- ✅ MODAL 2 -->
+<!-- ✅ MODAL POPUP 2 -->
 <div id="popup2" class="popup-overlay">
   <div class="popup-content">
     <span onclick="closePopup2()" class="close-btn">&times;</span>
@@ -316,8 +313,7 @@
 
     <form id="formArea2" action="https://formsubmit.co/teamtrigoofficial@gmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://trigoneetjee.netlify.app?success=true">
+      <input type="hidden" name="_autoresponse" value="Thank you for submitting your form. We'll contact you soon.">
 
       <label>Real Name:</label>
       <input type="text" name="Real Name" required>
@@ -340,7 +336,7 @@
       <label>Upload Payment Screenshot:</label>
       <input type="file" name="Payment Screenshot" accept="image/*" required>
 
-      <button type="submit" class="cta-button full">Submit</button>
+      <button type="submit" name="submit" class="cta-button full">Submit</button>
     </form>
   </div>
 </div>
@@ -374,13 +370,6 @@
   function showForm2() {
     document.getElementById("formArea2").style.display = "block";
   }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("success")) {
-      alert("✅ Submission Received! Contact Admin at https://t.me/TriGOcontactID");
-    }
-  });
 </script>
 
 <!-- ✅ STYLES -->
@@ -466,12 +455,8 @@
       padding: 20px;
     }
 
-    .popup-content h2 {
-      font-size: 20px;
-    }
-  }
+    .popup-content
 </style>
-
 
 
       
