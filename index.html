@@ -68,7 +68,7 @@
       border: 1px solid #333;
       background-color: #1a1a1a;
       color: #fff;
-      font-size: 16px; /* Prevents mobile zoom */
+      font-size: 16px; /* Prevent mobile zoom */
     }
 
     .search-bar button {
@@ -217,13 +217,13 @@
 
     <!-- Search Bar -->
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Batch ka naam type karo..." onkeydown="handleKey(event)" />
-      <button onclick="filterBatches()">Search</button>
+      <input type="text" id="searchInput" placeholder="Batch ka naam type karo..." />
+      <button>Search</button>
     </div>
 
     <!-- Batches -->
     <div id="batchContainer">
-      <div class="batch-card batch-card-flex">
+      <div class="batch-card batch-card-flex searchable-card">
         <img src="https://i.postimg.cc/SRtZnW6C/831f7807-c432-4f4b-8f55-f4dd61e6db0f.jpg" alt="Yakeen NEET 2026 Banner" class="batch-image" />
         <div class="batch-details">
           <h3>Yakeen NEET 2026</h3>
@@ -234,14 +234,14 @@
         </div>
       </div>
 
-      <div class="batch-card">
+      <div class="batch-card searchable-card">
         <h3>Yakeen NEET 2.0</h3>
         <p>Start: 19 May 2025 | End: 30 Jun 2026</p>
         <p>Best for Repeaters · 1:1 Mentor Guidance</p>
         <a href="#" class="cta-button">Enroll Now ₹5,000</a>
       </div>
 
-      <div class="batch-card">
+      <div class="batch-card searchable-card">
         <h3>Shaurya NEET Elite</h3>
         <p>Start: 01 Aug 2025 | End: 30 Jun 2026</p>
         <p>Fast track mentorship for toppers</p>
@@ -252,40 +252,54 @@
     <div class="hotline">📞 Contact TG ID: 7254930178</div>
   </div>
 
-  <script>
+  <!-- ✨ Full code is already provided up to the last <script> -->
+<!-- Just REPLACE your current <script> section with this one: -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("searchInput");
+    const button = document.querySelector(".search-bar button");
+
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter") filterBatches();
+    });
+
+    button.addEventListener("click", filterBatches);
+
     function filterBatches() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.batch-card');
+      const query = input.value.toLowerCase().trim();
+      const cards = document.querySelectorAll(".searchable-card");
       let matchFound = false;
 
       cards.forEach(card => {
-        const title = card.querySelector('h3').textContent.toLowerCase();
-        if (title.includes(query)) {
-          card.style.display = 'block';
+        const title = card.querySelector("h3");
+        if (title && title.textContent.toLowerCase().includes(query)) {
+          card.style.display = "block";
           matchFound = true;
         } else {
-          card.style.display = 'none';
+          card.style.display = "none";
         }
       });
 
-      if (!matchFound && query.trim() !== "") {
+      const existingPopup = document.querySelector(".popup-message");
+      if (existingPopup) existingPopup.remove();
+
+      if (!matchFound && query !== "") {
         showPopup(query);
       }
     }
 
-    function handleKey(e) {
-      if (e.key === "Enter") {
-        filterBatches();
-      }
-    }
-
     function showPopup(query) {
-      const popup = document.createElement('div');
-      popup.className = 'popup-message';
+      const popup = document.createElement("div");
+      popup.className = "popup-message";
       popup.innerHTML = `
         <h4>Sorry!</h4>
-        <p>We couldn't find any matches for "<strong>${query}</strong>".</p>
-        <small>Try another batch name.</small>
+        <p>No batch found for "<strong>${query}</strong>"</p>
+        <small>Try another name.</small>
       `;
-      document.querySelector('.container').appendChild(popup);
+      document.querySelector(".container").appendChild(popup);
 
+      setTimeout(() => popup.remove(), 3000);
+    }
+  });
+</script>
