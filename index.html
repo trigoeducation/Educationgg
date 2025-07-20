@@ -271,7 +271,7 @@
     <p><strong>Offer Price:</strong> ₹3,800</p>
     <button onclick="showForm()" class="cta-button full">BUY NOW</button>
 
-    <form id="formArea" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display:none;">
+  <form id="formArea" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display:none;">
   <label>Real Name:</label>
   <input type="text" name="Real Name" required>
 
@@ -280,6 +280,9 @@
 
   <label>Telegram Username (@username):</label>
   <input type="text" name="Telegram ID" required>
+
+  <label>PW Batch Name:</label>
+  <input type="text" name="PW Batch Name" required>
 
   <label>PW Name:</label>
   <input type="text" name="PW Name" required>
@@ -293,9 +296,23 @@
   <label>Upload Payment Screenshot:</label>
   <input type="file" name="Payment Screenshot" accept="image/*" required>
 
+  <label>Who is submitting the form?</label>
+<div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+  <label style="display: flex; align-items: center;">
+    <input type="radio" name="Submitted By" value="Student" required style="margin-right: 8px;">
+    Student
+  </label>
+  <label style="display: flex; align-items: center;">
+    <input type="radio" name="Submitted By" value="Parent" required style="margin-right: 8px;">
+    Parent
+  </label>
+</div>
+
+
   <input type="hidden" name="redirect" value="https://mineworkgg.netlify.app/thankyou.html">
   <button type="submit" class="cta-button full">Submit</button>
 </form>
+
 
 
 
@@ -322,6 +339,9 @@
   <label>Telegram Username (@username):</label>
   <input type="text" name="Telegram ID" required>
 
+  <label>PW Batch Name:</label>
+  <input type="text" name="PW Batch Name" required>
+
   <label>PW Name:</label>
   <input type="text" name="PW Name" required>
 
@@ -334,9 +354,22 @@
   <label>Upload Payment Screenshot:</label>
   <input type="file" name="Payment Screenshot" accept="image/*" required>
 
+  <label>Who is submitting the form?</label>
+  <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+    <label style="display: flex; align-items: center;">
+      <input type="radio" name="Submitted By" value="Student" required style="margin-right: 8px;">
+      Student
+    </label>
+    <label style="display: flex; align-items: center;">
+      <input type="radio" name="Submitted By" value="Parent" required style="margin-right: 8px;">
+      Parent
+    </label>
+  </div>
+
   <input type="hidden" name="redirect" value="https://mineworkgg.netlify.app/thankyou.html">
   <button type="submit" class="cta-button full">Submit</button>
 </form>
+
 
 
 
