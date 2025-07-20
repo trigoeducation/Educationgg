@@ -658,7 +658,18 @@ function closePopup() {
 
 </div>
 
-<button onclick="openTerms()" class="terms-button">Terms & Conditions</button>
+<p onclick="openTerms()" style="
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  margin-left: 8px;
+  display: inline-block;
+">
+  Terms & Conditions
+</p>
+
 <div id="termsPopup" class="terms-popup-overlay">
   <div class="terms-popup-content">
     <span onclick="closeTerms()" class="close-terms-btn">&times;</span>
@@ -667,12 +678,14 @@ function closePopup() {
       <li>Batch is delivered only between <strong>10:00 AM</strong> to <strong>5:00 PM</strong>.</li>
       <li>Access may take up to <strong>3 hours</strong> after enrollment.</li>
       <li>If there’s a server issue, batch is <strong>guaranteed next day</strong>.</li>
-      <li>Panic or issues? Contact Telegram ID: 
+      <li>Batch will always be provided on your <strong>registered mobile number</strong> via the <strong>official PW application</strong>.</li>
+      <li>Panic or issues? Contact Telegram ID:  
         <a href="https://t.me/TriGOcontactID" target="_blank" style="color:#004aad;">@TriGOcontactID</a>
       </li>
     </ul>
   </div>
 </div>
+
 <script>
   function openTerms() {
     document.getElementById("termsPopup").style.display = "flex";
