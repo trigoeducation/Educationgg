@@ -23,6 +23,7 @@
       margin: 0 auto;
       padding: 40px 20px;
       text-align: center;
+      position: relative;
     }
 
     .branding {
@@ -51,8 +52,9 @@
     .search-bar {
       display: flex;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .search-bar input {
@@ -109,6 +111,54 @@
       font-size: 16px;
       color: #888;
     }
+
+    /* 🔔 Structured Popup Styling */
+    .popup-message {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1a1a1a;
+      padding: 18px 24px;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(255, 78, 78, 0.4);
+      animation: fadeInTop 0.6s forwards;
+      z-index: 999;
+      width: auto;
+      text-align: center;
+      border-left: 4px solid #ff4e4e;
+    }
+
+    .popup-message h4 {
+      margin-bottom: 6px;
+      font-size: 20px;
+      color: #ff4e4e;
+    }
+
+    .popup-message p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .popup-message small {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    @keyframes fadeInTop {
+      0% {
+        transform: translateX(-50%) translateY(-30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -120,15 +170,15 @@
       <div class="title">Physics Wallah</div>
     </div>
 
-    <div class="subtitle">Jab bharosa aankhon se nahi dil se ho, toh har faisla sahi lagta hai❤️.</div>
+    <div class="subtitle">Unlock learning with flat discounts up to 30% on all batches!</div>
 
-    <!-- 🔍 Search Bar -->
+    <!-- Search Bar -->
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Batch ka naam type karo..." />
-      <button onclick="filterBatches()">Search</button>
+      <input type="text" id="searchInput" placeholder="Batch ka naam type karo..." onkeydown="handleKey(event)" />
+      <button onclick="filterBatches()">Search karo</button>
     </div>
 
-    <!-- 🧪 Batch Cards -->
+    <!-- Batches -->
     <div id="batchContainer">
       <div class="batch-card">
         <h3>Yakeen NEET 3.0</h3>
@@ -152,22 +202,49 @@
       </div>
     </div>
 
-    <div class="hotline">📞 Hotline: 8047359939</div>
+    <div class="hotline">📞 Contact TG ID: 7254930178 </div>
   </div>
 
   <script>
     function filterBatches() {
       const query = document.getElementById('searchInput').value.toLowerCase();
       const cards = document.querySelectorAll('.batch-card');
+      let matchFound = false;
 
       cards.forEach(card => {
         const title = card.querySelector('h3').textContent.toLowerCase();
         if (title.includes(query)) {
           card.style.display = 'block';
+          matchFound = true;
         } else {
           card.style.display = 'none';
         }
       });
+
+      if (!matchFound && query.trim() !== "") {
+        showPopup(query);
+      }
+    }
+
+    function handleKey(e) {
+      if (e.key === "Enter") {
+        filterBatches();
+      }
+    }
+
+    function showPopup(query) {
+      const popup = document.createElement('div');
+      popup.className = 'popup-message';
+      popup.innerHTML = `
+        <h4>Sorry!</h4>
+        <p>We couldn't find any matches for "<strong>${query}</strong>".</p>
+        <small>Try another batch name.</small>
+      `;
+      document.querySelector('.container').appendChild(popup);
+
+      setTimeout(() => {
+        popup.remove();
+      }, 3000);
     }
   </script>
 </body>
