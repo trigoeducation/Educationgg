@@ -45,7 +45,34 @@
     .subtitle {
       font-size: 18px;
       color: #ccc;
-      margin: 20px 0 40px;
+      margin: 20px 0 30px;
+    }
+
+    /* 🔍 Search Bar Styling */
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      gap: 10px;
+    }
+
+    .search-bar input {
+      width: 300px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      background-color: #00ffae;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
     }
 
     .batch-card {
@@ -87,13 +114,24 @@
 </head>
 <body>
   <div class="container">
+
+    <!-- Branding -->
     <div class="branding">
-      <img src="https://i.postimg.cc/Jzj53crM/Pi7-doc-2025-07-20-19-44-56-1.png" alt="Physics Wallah Logo" class="logo" />
+      <div class="logo-wrapper">
+        <img src="https://i.postimg.cc/Jzj53crM/Pi7-doc-2025-07-20-19-44-56-1.png" alt="Physics Wallah Logo" class="logo" />
+      </div>
       <div class="title">Physics Wallah</div>
     </div>
 
     <div class="subtitle">Trust | Yakeen | Bharosa</div>
 
+    <!-- 🔍 Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search for 'yakeen' or 'droppers'...">
+      <button>Study</button>
+    </div>
+
+    <!-- Batch Cards -->
     <div class="batch-card">
       <h3>Yakeen NEET 3.0</h3>
       <p>Start: 14 Jul 2025 &nbsp; | &nbsp; End: 30 Jun 2026</p>
