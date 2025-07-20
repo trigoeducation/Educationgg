@@ -272,8 +272,7 @@
     <button onclick="showForm()" class="cta-button full">BUY NOW</button>
 
     <form id="formArea" action="https://formsubmit.co/teamtrigoofficial@gmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_autoresponse" value="Thank you for submitting your form. We'll contact you soon.">
+    <input type="hidden" name="_next" value="https://mineworkgg.netlify.app/thankyou.html">
 
       <label>Real Name:</label>
       <input type="text" name="Real Name" required>
@@ -312,8 +311,8 @@
     <button onclick="showForm2()" class="cta-button full">BUY NOW</button>
 
     <form id="formArea2" action="https://formsubmit.co/teamtrigoofficial@gmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_autoresponse" value="Thank you for submitting your form. We'll contact you soon.">
+    <input type="hidden" name="_next" value="https://mineworkgg.netlify.app/thankyou.html">
+
 
       <label>Real Name:</label>
       <input type="text" name="Real Name" required>
@@ -344,14 +343,19 @@
 <!-- ✅ JS LOGIC -->
 <script>
   function openPopup() {
-    document.getElementById("popup").style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }
+  const popup = document.getElementById("popup");
+  popup.style.display = "flex";
+  popup.style.opacity = "1"; // Optional if using transitions
+  document.body.style.overflow = "hidden";
+}
 
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-    document.body.style.overflow = "auto";
-  }
+function closePopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "none";
+  popup.style.opacity = "0";
+  document.body.style.overflow = "auto";
+}
+
 
   function showForm() {
     document.getElementById("formArea").style.display = "block";
