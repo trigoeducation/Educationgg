@@ -236,6 +236,7 @@
 
     <!-- ✅ BATCH SECTION -->
 <div id="batchContainer">
+  <!-- ✅ Yakeen NEET 2026 -->
   <div class="batch-card batch-card-flex searchable-card">
     <img src="https://i.postimg.cc/SRtZnW6C/831f7807-c432-4f4b-8f55-f4dd61e6db0f.jpg" alt="Yakeen NEET 2026 Banner" class="batch-image" />
     <div class="batch-details">
@@ -246,9 +247,21 @@
       <button onclick="openPopup()" class="cta-button">Enroll Now</button>
     </div>
   </div>
+
+  <!-- ✅ Yakeen NEET 2.0 2026 -->
+  <div class="batch-card batch-card-flex searchable-card">
+    <img src="https://i.postimg.cc/fWvzy5Vm/6d9e4207-7469-4bdb-aeb4-6a43ea04591d.jpg" alt="Yakeen NEET 2.0 2026 Banner" class="batch-image" />
+    <div class="batch-details">
+      <h3>Yakeen NEET 2.0 2026</h3>
+      <p>Start: 19 May 2026 | End: 30 June 2026</p>
+      <p>Flat 22.45% OFF on this batch | Limited Time Offer!</p>
+      <p>Actual Price : ₹4,900</p>
+      <button onclick="openPopup2()" class="cta-button">Enroll Now</button>
+    </div>
+  </div>
 </div>
 
-<!-- ✅ MODAL POPUP -->
+<!-- ✅ MODAL POPUP 1 -->
 <div id="popup" class="popup-overlay">
   <div class="popup-content">
     <span onclick="closePopup()" class="close-btn">&times;</span>
@@ -258,10 +271,49 @@
     <p><strong>Offer Price:</strong> ₹3,800</p>
     <button onclick="showForm()" class="cta-button full">BUY NOW</button>
 
-    <!-- ✅ FORM AREA -->
-    <form id="formArea" action="https://formsubmit.co/imrealtrigo@gmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
+    <form id="formArea" action="https://formsubmit.co/teamtrigoofficial@gmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://yourdomain.com?success=true">
+      <input type="hidden" name="_autoresponse" value="Thank you for submitting your form. We'll contact you soon.">
+
+      <label>Real Name:</label>
+      <input type="text" name="Real Name" required>
+
+      <label>Telegram Name:</label>
+      <input type="text" name="Telegram Name" required>
+
+      <label>Telegram Username (@username):</label>
+      <input type="text" name="Telegram ID" required>
+
+      <label>PW Name:</label>
+      <input type="text" name="PW Name" required>
+
+      <label>PW Mobile Number:</label>
+      <input type="tel" name="PW Mobile Number" required>
+
+      <label>Gmail:</label>
+      <input type="email" name="Gmail" required>
+
+      <label>Upload Payment Screenshot:</label>
+      <input type="file" name="Payment Screenshot" accept="image/*" required>
+
+      <button type="submit" class="cta-button full">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ MODAL POPUP 2 -->
+<div id="popup2" class="popup-overlay">
+  <div class="popup-content">
+    <span onclick="closePopup2()" class="close-btn">&times;</span>
+    <h2>Yakeen NEET 2.0 2026 - Batch Details</h2>
+    <p><strong>Original Price:</strong> ₹4,900</p>
+    <p><strong>Discount:</strong> 22.45%</p>
+    <p><strong>Offer Price:</strong> ₹3,800</p>
+    <button onclick="showForm2()" class="cta-button full">BUY NOW</button>
+
+    <form id="formArea2" action="https://formsubmit.co/teamtrigoofficial@gmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_autoresponse" value="Thank you for submitting your form. We'll contact you soon.">
 
       <label>Real Name:</label>
       <input type="text" name="Real Name" required>
@@ -305,16 +357,22 @@
     document.getElementById("formArea").style.display = "block";
   }
 
-  // Confirmation popup after submission
-  window.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("success")) {
-      alert("✅ Submission Received! Contact Admin at https://t.me/TriGOcontactID");
-    }
-  });
+  function openPopup2() {
+    document.getElementById("popup2").style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePopup2() {
+    document.getElementById("popup2").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  function showForm2() {
+    document.getElementById("formArea2").style.display = "block";
+  }
 </script>
 
-<!-- ✅ STYLES -->
+<!-- ✅ STYLES (Same for Both) -->
 <style>
   .cta-button {
     background-color: #00ffae;
@@ -403,87 +461,6 @@
   }
 </style>
 
-<!-- ✅ BATCH SECTION -->
-<div id="batchContainer">
-  <!-- Existing batches -->
-
-  <!-- ✅ NEW: YAKEEN NEET 2.0 2026 -->
-  <div class="batch-card batch-card-flex searchable-card">
-    <img src="https://i.postimg.cc/fWvzy5Vm/6d9e4207-7469-4bdb-aeb4-6a43ea04591d.jpg" alt="Yakeen NEET 2.0 2026 Banner" class="batch-image" />
-    <div class="batch-details">
-      <h3>Yakeen NEET 2.0 2026</h3>
-      <p>Start: 19 May 2026 | End: 30 June 2026</p>
-      <p>Flat 22.45% OFF on this batch | Limited Time Offer!</p>
-      <p>Actual Price : ₹4,900</p>
-      <button onclick="openPopup2()" class="cta-button">Enroll Now</button>
-    </div>
-  </div>
-</div>
-
-<!-- ✅ MODAL POPUP FOR Yakeen NEET 2.0 -->
-<div id="popup2" class="popup-overlay">
-  <div class="popup-content">
-    <span onclick="closePopup2()" class="close-btn">&times;</span>
-    <h2>Yakeen NEET 2.0 2026 - Batch Details</h2>
-    <p><strong>Original Price:</strong> ₹4,900</p>
-    <p><strong>Discount:</strong> 22.45%</p>
-    <p><strong>Offer Price:</strong> ₹3,800</p>
-    <button onclick="showForm2()" class="cta-button full">BUY NOW</button>
-
-    <!-- ✅ FORM AREA -->
-    <form id="formArea2" action="https://formsubmit.co/teamtrigoofficial@gmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://yourdomain.com?success=true">
-
-      <label>Real Name:</label>
-      <input type="text" name="Real Name" required>
-
-      <label>Telegram Name:</label>
-      <input type="text" name="Telegram Name" required>
-
-      <label>Telegram Username (@username):</label>
-      <input type="text" name="Telegram ID" required>
-
-      <label>PW Name:</label>
-      <input type="text" name="PW Name" required>
-
-      <label>PW Mobile Number:</label>
-      <input type="tel" name="PW Mobile Number" required>
-
-      <label>Gmail:</label>
-      <input type="email" name="Gmail" required>
-
-      <label>Upload Payment Screenshot:</label>
-      <input type="file" name="Payment Screenshot" accept="image/*" required>
-
-      <button type="submit" class="cta-button full">Submit</button>
-    </form>
-  </div>
-</div>
-
-<!-- ✅ JS LOGIC -->
-<script>
-  function openPopup2() {
-    document.getElementById("popup2").style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }
-
-  function closePopup2() {
-    document.getElementById("popup2").style.display = "none";
-    document.body.style.overflow = "auto";
-  }
-
-  function showForm2() {
-    document.getElementById("formArea2").style.display = "block";
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("success")) {
-      alert("✅ Submission Received! Manager at https://t.me/TriGOcontactID");
-    }
-  });
-</script>
 
       
 
