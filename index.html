@@ -708,20 +708,21 @@ function closePopup() {
 
   </div>
 
-  <!-- ✅ JavaScript Logic -->
   <script>
   function openAbout() {
     document.getElementById("aboutPopup").style.display = "flex";
     document.body.style.overflow = "hidden";
+    document.getElementById("aboutBtn").style.display = "none"; // ✅ Hide button when popup opens
   }
 
   function closeAbout() {
     document.getElementById("aboutPopup").style.display = "none";
     document.body.style.overflow = "auto";
+    checkScrollPosition(); // ✅ Recheck scroll position before showing button
   }
 
-  // Show "About Us" button only when user scrolls near the bottom
-  window.addEventListener("scroll", function () {
+  // ✅ Function to handle scroll logic
+  function checkScrollPosition() {
     const scrollY = window.scrollY + window.innerHeight;
     const pageHeight = document.documentElement.scrollHeight;
     const aboutBtn = document.getElementById("aboutBtn");
@@ -731,8 +732,12 @@ function closePopup() {
     } else {
       aboutBtn.style.display = "none";
     }
-  });
+  }
+
+  // ✅ Listen to scroll
+  window.addEventListener("scroll", checkScrollPosition);
 </script>
+
 
 </div>
 
