@@ -48,7 +48,6 @@
       margin: 20px 0 30px;
     }
 
-    /* 🔍 Search Bar Styling */
     .search-bar {
       display: flex;
       justify-content: center;
@@ -117,36 +116,59 @@
 
     <!-- Branding -->
     <div class="branding">
-      <div class="logo-wrapper">
-        <img src="https://i.postimg.cc/Jzj53crM/Pi7-doc-2025-07-20-19-44-56-1.png" alt="Physics Wallah Logo" class="logo" />
-      </div>
+      <img src="https://i.postimg.cc/Jzj53crM/Pi7-doc-2025-07-20-19-44-56-1.png" alt="Physics Wallah Logo" class="logo" />
       <div class="title">Physics Wallah</div>
     </div>
 
-    <div class="subtitle">Trust | Yakeen | Bharosa</div>
+    <div class="subtitle">Jab bharosa aankhon se nahi dil se ho, toh har faisla sahi lagta hai❤️.</div>
 
     <!-- 🔍 Search Bar -->
     <div class="search-bar">
-      <input type="text" placeholder="Search for 'yakeen' or 'droppers'...">
-      <button>Study</button>
+      <input type="text" id="searchInput" placeholder="Batch ka naam type karo..." />
+      <button onclick="filterBatches()">Search</button>
     </div>
 
-    <!-- Batch Cards -->
-    <div class="batch-card">
-      <h3>Yakeen NEET 3.0</h3>
-      <p>Start: 14 Jul 2025 &nbsp; | &nbsp; End: 30 Jun 2026</p>
-      <p>Class Mode: Live Interactive · Doubt Support Included</p>
-      <a href="#" class="cta-button">Enroll Now ₹5,000</a>
-    </div>
+    <!-- 🧪 Batch Cards -->
+    <div id="batchContainer">
+      <div class="batch-card">
+        <h3>Yakeen NEET 3.0</h3>
+        <p>Start: 14 Jul 2025 | End: 30 Jun 2026</p>
+        <p>Live Interactive · Doubt Support Included</p>
+        <a href="#" class="cta-button">Enroll Now ₹5,000</a>
+      </div>
 
-    <div class="batch-card">
-      <h3>Yakeen NEET 2.0</h3>
-      <p>Start: 19 May 2025 &nbsp; | &nbsp; End: 30 Jun 2026</p>
-      <p>Best for Repeaters · 1:1 Mentor Guidance</p>
-      <a href="#" class="cta-button">Enroll Now ₹5,000</a>
+      <div class="batch-card">
+        <h3>Yakeen NEET 2.0</h3>
+        <p>Start: 19 May 2025 | End: 30 Jun 2026</p>
+        <p>Best for Repeaters · 1:1 Mentor Guidance</p>
+        <a href="#" class="cta-button">Enroll Now ₹5,000</a>
+      </div>
+
+      <div class="batch-card">
+        <h3>Shaurya NEET Elite</h3>
+        <p>Start: 01 Aug 2025 | End: 30 Jun 2026</p>
+        <p>Fast track mentorship for toppers</p>
+        <a href="#" class="cta-button">Enroll Now ₹7,000</a>
+      </div>
     </div>
 
     <div class="hotline">📞 Hotline: 8047359939</div>
   </div>
+
+  <script>
+    function filterBatches() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.batch-card');
+
+      cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
