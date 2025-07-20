@@ -306,10 +306,8 @@
       const popup = document.createElement("div");
       popup.className = "popup-message";
       popup.innerHTML = `
-        <h4>Input Too Short</h4>
-        <p>Please enter at least <strong>2 letters</strong> to search.</p>
-        <small>Example: "Yak", "Sha", etc.</small>
-      `;
+      <p>Please enter at least <strong>2 letters.</p>
+              `;
       document.querySelector(".container").appendChild(popup);
       setTimeout(() => popup.remove(), 3000);
     }
