@@ -447,16 +447,20 @@ font-family: 'Segoe UI', sans-serif;
     <!-- BUY NOW Button -->
     <button onclick="showPayment()" class="cta-button full">BUY NOW</button>
 
-    <!-- ✅ QR & UPI Section (Hidden Initially) -->
+    <!-- ✅ QR & UPI Section -->
     <div id="paymentSection" style="display: none; margin-top: 20px; text-align: center;">
       <p><strong>Scan & Pay:</strong></p>
       <img src="https://i.postimg.cc/kXZh8Jpt/Screenshot-2025-07-21-045729.png" alt="QR Code" style="max-width: 200px; margin: 10px auto;">
-      <p><strong>UPI ID:</strong> <span id="upiID">realrahulmalhotra@fam</span>
-        <button onclick="copyUPI()" style="margin-left: 10px; padding: 4px 8px;">Copy</button>
+      
+      <p>
+        <strong>UPI ID:</strong>
+        <span id="upiID" onclick="copyUPI()" style="background-color: #444; color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; display: inline-block;">
+          realrahulmalhotra@fam
+        </span>
       </p>
     </div>
 
-    <!-- ✅ FORM (Hidden Initially) -->
+    <!-- ✅ FORM Section -->
     <form id="formArea" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display:none; margin-top: 20px;">
       <label>Real Name:</label>
       <input type="text" name="Real Name" required>
@@ -531,6 +535,7 @@ font-family: 'Segoe UI', sans-serif;
 
 
 
+
   </div>
 </div>
 
@@ -538,52 +543,87 @@ font-family: 'Segoe UI', sans-serif;
 <div id="popup2" class="popup-overlay">
   <div class="popup-content">
     <span onclick="closePopup2()" class="close-btn">&times;</span>
-    <h2>Yakeen NEET 2.0 2026 - Batch Details</h2>
-    <p><strong>Original Price:</strong> ₹4,900</p>
-    <p><strong>Discount:</strong> 22.45%</p>
-    <p><strong>Offer Price:</strong> ₹3,800</p>
-    <button onclick="showForm2()" class="cta-button full">BUY NOW</button>
 
-    <form id="formArea2" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display:none;">
-  <label>Real Name:</label>
-  <input type="text" name="Real Name" required>
+    <h2 style="text-align: center;">Yakeen NEET 2.0 2026 - Batch Details</h2>
+    <div style="text-align: center;">
+      <p><strong>Original Price:</strong> ₹4,900</p>
+      <p><strong>Discount:</strong> 22.45%</p>
+      <p><strong>Offer Price:</strong> ₹3,800</p>
+      <button onclick="showPayment2()" class="cta-button full" style="margin-top: 10px;">BUY NOW</button>
+    </div>
 
-  <label>Telegram Name:</label>
-  <input type="text" name="Telegram Name" required>
+    <!-- ✅ PAYMENT SECTION -->
+    <div id="paymentSection2" style="display: none; margin-top: 20px; text-align: center;">
+      <h3>📌 Make Payment First</h3>
+      <img src="https://i.postimg.cc/kXZh8Jpt/Screenshot-2025-07-21-045729.png" alt="QR Code" style="max-width: 200px; margin: 10px auto; display: block;">
+      <p>💳 <strong>UPI ID:</strong> <span id="upiId2">realrahulmalhotra@fam</span></p>
+      <button onclick="copyUPI2()" class="cta-button">Copy UPI ID</button>
+      <p style="margin-top: 10px;"><strong>After payment, fill the form below 👇</strong></p>
+    </div>
 
-  <label>Telegram Username (@username):</label>
-  <input type="text" name="Telegram ID" required>
+    <!-- ✅ FORM -->
+    <form id="formArea2" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display: none;">
+      <label>Real Name:</label>
+      <input type="text" name="Real Name" required inputmode="text">
 
-  <label>PW Batch Name:</label>
-  <input type="text" name="PW Batch Name" required>
+      <label>Telegram Name:</label>
+      <input type="text" name="Telegram Name" required inputmode="text">
 
-  <label>PW Name:</label>
-  <input type="text" name="PW Name" required>
+      <label>Telegram Username (@username):</label>
+      <input type="text" name="Telegram ID" required inputmode="text">
 
-  <label>PW Mobile Number:</label>
-  <input type="tel" name="PW Mobile Number" required>
+      <label>PW Batch Name:</label>
+      <input type="text" name="PW Batch Name" required inputmode="text">
 
-  <label>Gmail:</label>
-  <input type="email" name="Gmail" required>
+      <label>PW Name:</label>
+      <input type="text" name="PW Name" required inputmode="text">
 
-  <label>Upload Payment Screenshot:</label>
-  <input type="file" name="Payment Screenshot" accept="image/*" required>
+      <label>PW Mobile Number:</label>
+      <input type="tel" name="PW Mobile Number" required inputmode="tel">
 
-  <label>Who is submitting the form?</label>
-  <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
-    <label style="display: flex; align-items: center;">
-      <input type="radio" name="Submitted By" value="Student" required style="margin-right: 8px;">
-      Student
-    </label>
-    <label style="display: flex; align-items: center;">
-      <input type="radio" name="Submitted By" value="Parent" required style="margin-right: 8px;">
-      Parent
-    </label>
+      <label>Gmail:</label>
+      <input type="email" name="Gmail" required inputmode="email">
+
+      <label>Upload Payment Screenshot:</label>
+      <input type="file" name="Payment Screenshot" accept="image/*" required>
+
+      <label>Who is submitting the form?</label>
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+        <label style="display: flex; align-items: center;">
+          <input type="radio" name="Submitted By" value="Student" required style="margin-right: 8px;">
+          Student
+        </label>
+        <label style="display: flex; align-items: center;">
+          <input type="radio" name="Submitted By" value="Parent" required style="margin-right: 8px;">
+          Parent
+        </label>
+      </div>
+
+      <input type="hidden" name="redirect" value="https://mineworkgg.netlify.app/thankyou.html">
+      <button type="submit" class="cta-button full">Submit</button>
+    </form>
   </div>
+</div>
 
-  <input type="hidden" name="redirect" value="https://mineworkgg.netlify.app/thankyou.html">
-  <button type="submit" class="cta-button full">Submit</button>
-</form>
+<!-- ✅ JS FUNCTIONS -->
+<script>
+  function showPayment2() {
+    document.getElementById("paymentSection2").style.display = "block";
+    document.getElementById("formArea2").style.display = "block";
+  }
+
+  function copyUPI2() {
+    const upiText = document.getElementById("upiId2").innerText;
+    navigator.clipboard.writeText(upiText).then(() => {
+      alert("✅ UPI ID copied: " + upiText);
+    });
+  }
+
+  function closePopup2() {
+    document.getElementById("popup2").style.display = "none";
+  }
+</script>
+
 
 
 
