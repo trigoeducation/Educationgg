@@ -388,6 +388,43 @@ font-family: 'Segoe UI', sans-serif;
   background-color: rgba(0,0,0,0.2);
   border-radius: 6px;
 }
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #444;
+}
 </style>
 </head>
 <body>
@@ -410,6 +447,7 @@ font-family: 'Segoe UI', sans-serif;
 
     <!-- ✅ BATCH SECTION -->
 <div id="batchContainer">
+
   <!-- ✅ Yakeen NEET 2026 -->
   <div class="batch-card batch-card-flex searchable-card">
     <img src="https://i.postimg.cc/SRtZnW6C/831f7807-c432-4f4b-8f55-f4dd61e6db0f.jpg" alt="Yakeen NEET 2026 Banner" class="batch-image" />
@@ -427,13 +465,39 @@ font-family: 'Segoe UI', sans-serif;
     <img src="https://i.postimg.cc/fWvzy5Vm/6d9e4207-7469-4bdb-aeb4-6a43ea04591d.jpg" alt="Yakeen NEET 2.0 2026 Banner" class="batch-image" />
     <div class="batch-details">
       <h3>Yakeen NEET 2.0 2026</h3>
-      <p>Start: 19 May 2026 | End: 30 June 2026</p>
+      <p>Start: 19 May 2025 | End: 30 June 2026</p>
       <p>Flat 22.45% OFF on this batch | Limited Time Offer!</p>
       <p>Actual Price : ₹4,900</p>
       <button onclick="openPopup2()" class="cta-button">Enroll Now</button>
     </div>
   </div>
-</div>
+
+  <!-- ✅ Yakeen NEET 3.0 2026 -->
+  <div class="batch-card batch-card-flex searchable-card">
+    <img src="https://i.postimg.cc/8c8Kft5f/7a515ce1-0711-4707-8de5-b0c02c151b19.png" alt="Yakeen NEET 3.0 2026 Banner" class="batch-image" />
+    <div class="batch-details">
+      <h3>Yakeen NEET 3.0 2026</h3>
+      <p>Start: 14 July 2025 | End: 30 June 2026</p>
+      <p>Flat 20.83% OFF on this batch | Limited Time Offer!</p>
+      <p>Actual Price : ₹4,800</p>
+      <button onclick="openPopup3()" class="cta-button">Enroll Now</button>
+    </div>
+  </div>
+
+  <!-- ✅ Lakshya NEET 2026 -->
+  <div class="batch-card batch-card-flex searchable-card">
+    <img src="https://i.postimg.cc/pL9F3xkx/ee46e53f-211e-44b6-b588-fc613b4da2ae-1.jpg" alt="Lakshya NEET 2026 Banner" class="batch-image" />
+    <div class="batch-details">
+      <h3>Lakshya NEET 2026</h3>
+      <p>Start: 07 April 2025 | End: 30 June 2026</p>
+      <p>Flat 24% OFF on this batch | Limited Time Offer!</p>
+      <p>Actual Price : ₹4,999</p>
+      <button onclick="openPopup4()" class="cta-button">Enroll Now</button>
+    </div>
+  </div>
+
+</div> <!-- End of batchContainer -->
+
 
 <!-- ✅ MODAL POPUP 1 -->
 <div id="popup" class="popup-overlay">
@@ -451,13 +515,11 @@ font-family: 'Segoe UI', sans-serif;
     <div id="paymentSection" style="display: none; margin-top: 20px; text-align: center;">
       <p><strong>Scan & Pay:</strong></p>
       <img src="https://i.postimg.cc/kXZh8Jpt/Screenshot-2025-07-21-045729.png" alt="QR Code" style="max-width: 200px; margin: 10px auto;">
-      
-      <p>
-        <strong>UPI ID:</strong>
-        <span id="upiID" onclick="copyUPI()" style="background-color: #444; color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; display: inline-block;">
-          realrahulmalhotra@fam
-        </span>
-      </p>
+
+      <!-- ✅ Full Clickable UPI Box -->
+      <div onclick="copyUPI()" style="background-color: #444; color: white; padding: 10px 16px; border-radius: 10px; display: inline-block; cursor: pointer; margin-top: 10px;">
+        <strong>UPI ID:</strong> realrahulmalhotra@fam
+      </div>
     </div>
 
     <!-- ✅ FORM Section -->
@@ -519,7 +581,7 @@ font-family: 'Segoe UI', sans-serif;
   }
 
   function copyUPI() {
-    const upiText = document.getElementById("upiID").innerText;
+    const upiText = "realrahulmalhotra@fam";
     navigator.clipboard.writeText(upiText).then(() => {
       alert("UPI ID copied: " + upiText);
     });
@@ -536,6 +598,7 @@ font-family: 'Segoe UI', sans-serif;
 
 
 
+
   </div>
 </div>
 
@@ -543,46 +606,46 @@ font-family: 'Segoe UI', sans-serif;
 <div id="popup2" class="popup-overlay">
   <div class="popup-content">
     <span onclick="closePopup2()" class="close-btn">&times;</span>
+    <h2>Udaan NEET 2026 - Batch Details</h2>
+    <p><strong>Original Price:</strong> ₹4,900</p>
+    <p><strong>Discount:</strong> 22.45%</p>
+    <p><strong>Offer Price:</strong> ₹3,800</p>
 
-    <h2 style="text-align: center;">Yakeen NEET 2.0 2026 - Batch Details</h2>
-    <div style="text-align: center;">
-      <p><strong>Original Price:</strong> ₹4,900</p>
-      <p><strong>Discount:</strong> 22.45%</p>
-      <p><strong>Offer Price:</strong> ₹3,800</p>
-      <button onclick="showPayment2()" class="cta-button full" style="margin-top: 10px;">BUY NOW</button>
-    </div>
+    <!-- BUY NOW Button -->
+    <button onclick="showPayment2()" class="cta-button full">BUY NOW</button>
 
-    <!-- ✅ PAYMENT SECTION -->
+    <!-- ✅ QR & UPI Section (Hidden Initially) -->
     <div id="paymentSection2" style="display: none; margin-top: 20px; text-align: center;">
-      <h3>📌 Make Payment First</h3>
-      <img src="https://i.postimg.cc/kXZh8Jpt/Screenshot-2025-07-21-045729.png" alt="QR Code" style="max-width: 200px; margin: 10px auto; display: block;">
-      <p>💳 <strong>UPI ID:</strong> <span id="upiId2">realrahulmalhotra@fam</span></p>
-      <button onclick="copyUPI2()" class="cta-button">Copy UPI ID</button>
-      <p style="margin-top: 10px;"><strong>After payment, fill the form below 👇</strong></p>
+      <p><strong>Scan & Pay:</strong></p>
+      <img src="https://i.postimg.cc/kXZh8Jpt/Screenshot-2025-07-21-045729.png" alt="QR Code" style="max-width: 200px; margin: 10px auto;">
+      
+      <div onclick="copyUPI2()" style="cursor: pointer; background: #4a3f3f; color: white; display: inline-block; padding: 8px 14px; border-radius: 10px;">
+        UPI ID: realrahulmalhotra@fam
+      </div>
     </div>
 
-    <!-- ✅ FORM -->
-    <form id="formArea2" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display: none;">
+    <!-- ✅ FORM (Hidden Initially) -->
+    <form id="formArea2" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display:none; margin-top: 20px;">
       <label>Real Name:</label>
-      <input type="text" name="Real Name" required inputmode="text">
+      <input type="text" name="Real Name" required>
 
       <label>Telegram Name:</label>
-      <input type="text" name="Telegram Name" required inputmode="text">
+      <input type="text" name="Telegram Name" required>
 
       <label>Telegram Username (@username):</label>
-      <input type="text" name="Telegram ID" required inputmode="text">
+      <input type="text" name="Telegram ID" required>
 
       <label>PW Batch Name:</label>
-      <input type="text" name="PW Batch Name" required inputmode="text">
+      <input type="text" name="PW Batch Name" required>
 
       <label>PW Name:</label>
-      <input type="text" name="PW Name" required inputmode="text">
+      <input type="text" name="PW Name" required>
 
       <label>PW Mobile Number:</label>
-      <input type="tel" name="PW Mobile Number" required inputmode="tel">
+      <input type="tel" name="PW Mobile Number" required>
 
       <label>Gmail:</label>
-      <input type="email" name="Gmail" required inputmode="email">
+      <input type="email" name="Gmail" required>
 
       <label>Upload Payment Screenshot:</label>
       <input type="file" name="Payment Screenshot" accept="image/*" required>
@@ -605,7 +668,14 @@ font-family: 'Segoe UI', sans-serif;
   </div>
 </div>
 
-<!-- ✅ JS FUNCTIONS -->
+<!-- ✅ CSS Fix for Mobile Zoom -->
+<style>
+  input, textarea, select, button {
+    font-size: 16px;
+  }
+</style>
+
+<!-- ✅ SCRIPT -->
 <script>
   function showPayment2() {
     document.getElementById("paymentSection2").style.display = "block";
@@ -613,9 +683,9 @@ font-family: 'Segoe UI', sans-serif;
   }
 
   function copyUPI2() {
-    const upiText = document.getElementById("upiId2").innerText;
-    navigator.clipboard.writeText(upiText).then(() => {
-      alert("✅ UPI ID copied: " + upiText);
+    const upi = "realrahulmalhotra@fam";
+    navigator.clipboard.writeText(upi).then(() => {
+      alert("UPI ID copied: " + upi);
     });
   }
 
@@ -628,8 +698,262 @@ font-family: 'Segoe UI', sans-serif;
 
 
 
+
   </div>
 </div>
+
+<!-- ✅ MODAL POPUP 3 -->
+<div id="popup3" class="popup-overlay">
+  <div class="popup-content">
+    <span onclick="closePopup3()" class="close-btn">&times;</span>
+    <h2>Yakeen NEET 3.0 - Batch Details</h2>
+    <p><strong>Original Price:</strong> ₹4,800</p>
+    <p><strong>Discount:</strong> 20.83%</p>
+    <p><strong>Offer Price:</strong> ₹3,800</p>
+
+    <!-- BUY NOW Button -->
+    <button onclick="showPayment3()" class="cta-button full">BUY NOW</button>
+
+    <!-- ✅ QR & UPI Section -->
+    <div id="paymentSection3" style="display: none; margin-top: 20px; text-align: center;">
+      <p><strong>Scan & Pay:</strong></p>
+      <img src="https://i.postimg.cc/kXZh8Jpt/Screenshot-2025-07-21-045729.png" alt="QR Code" style="max-width: 200px; margin: 10px auto;">
+
+      <!-- ✅ Full Clickable UPI Box -->
+      <div onclick="copyUPI3()" style="background-color: #444; color: white; padding: 10px 16px; border-radius: 10px; display: inline-block; cursor: pointer; margin-top: 10px;">
+        <strong>UPI ID:</strong> realrahulmalhotra@fam
+      </div>
+    </div>
+
+    <!-- ✅ FORM Section -->
+    <form id="formArea3" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display:none; margin-top: 20px;">
+      <label>Real Name:</label>
+      <input type="text" name="Real Name" required>
+
+      <label>Telegram Name:</label>
+      <input type="text" name="Telegram Name" required>
+
+      <label>Telegram Username (@username):</label>
+      <input type="text" name="Telegram ID" required>
+
+      <label>PW Batch Name:</label>
+      <input type="text" name="PW Batch Name" required>
+
+      <label>PW Name:</label>
+      <input type="text" name="PW Name" required>
+
+      <label>PW Mobile Number:</label>
+      <input type="tel" name="PW Mobile Number" required>
+
+      <label>Gmail:</label>
+      <input type="email" name="Gmail" required>
+
+      <label>Upload Payment Screenshot:</label>
+      <input type="file" name="Payment Screenshot" accept="image/*" required>
+
+      <label>Who is submitting the form?</label>
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+        <label style="display: flex; align-items: center;">
+          <input type="radio" name="Submitted By" value="Student" required style="margin-right: 8px;">
+          Student
+        </label>
+        <label style="display: flex; align-items: center;">
+          <input type="radio" name="Submitted By" value="Parent" required style="margin-right: 8px;">
+          Parent
+        </label>
+      </div>
+
+      <input type="hidden" name="redirect" value="https://mineworkgg.netlify.app/thankyou.html">
+      <button type="submit" class="cta-button full">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ JS for POPUP 3 -->
+<script>
+  function openPopup3() {
+    document.getElementById("popup3").style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePopup3() {
+    document.getElementById("popup3").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  function showPayment3() {
+    document.getElementById("paymentSection3").style.display = "block";
+    document.getElementById("formArea3").style.display = "block";
+  }
+
+  function copyUPI3() {
+    const upi = "realrahulmalhotra@fam";
+    navigator.clipboard.writeText(upi).then(() => {
+      alert("UPI ID copied: " + upi);
+    });
+  }
+</script>
+
+
+</div>
+</div>
+
+<!-- ✅ MODAL POPUP 4 -->
+<div id="popup4" class="popup-overlay">
+  <div class="popup-content">
+    <span onclick="closePopup4()" class="close-btn">&times;</span>
+    <h2>Lakshya NEET 2026 - Batch Details</h2>
+    <p><strong>Original Price:</strong> ₹4,999</p>
+    <p><strong>Discount:</strong> 24%</p>
+    <p><strong>Offer Price:</strong> ₹3,800</p>
+
+    <!-- BUY NOW Button -->
+    <button onclick="showPayment4()" class="cta-button full">BUY NOW</button>
+
+    <!-- ✅ QR & UPI Section (Hidden Initially) -->
+    <div id="paymentSection4" style="display: none; margin-top: 20px; text-align: center;">
+      <p><strong>Scan & Pay:</strong></p>
+      <img src="https://i.postimg.cc/kXZh8Jpt/Screenshot-2025-07-21-045729.png" alt="QR Code" style="max-width: 200px; margin: 10px auto;">
+      
+      <div onclick="copyUPI4()" style="cursor: pointer; background: #4a3f3f; color: white; display: inline-block; padding: 8px 14px; border-radius: 10px;">
+        UPI ID: <strong>realrahulmalhotra@fam</strong>
+      </div>
+    </div>
+
+    <!-- ✅ FORM (Hidden Initially) -->
+    <form id="formArea4" action="https://getform.io/f/bvryonnb" method="POST" enctype="multipart/form-data" style="display:none; margin-top: 20px;">
+      <label>Real Name:</label>
+      <input type="text" name="Real Name" required>
+
+      <label>Telegram Name:</label>
+      <input type="text" name="Telegram Name" required>
+
+      <label>Telegram Username (@username):</label>
+      <input type="text" name="Telegram ID" required>
+
+      <label>PW Batch Name:</label>
+      <input type="text" name="PW Batch Name" required>
+
+      <label>PW Name:</label>
+      <input type="text" name="PW Name" required>
+
+      <label>PW Mobile Number:</label>
+      <input type="tel" name="PW Mobile Number" required>
+
+      <label>Gmail:</label>
+      <input type="email" name="Gmail" required>
+
+      <label>Upload Payment Screenshot:</label>
+      <input type="file" name="Payment Screenshot" accept="image/*" required>
+
+      <label>Who is submitting the form?</label>
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+        <label style="display: flex; align-items: center;">
+          <input type="radio" name="Submitted By" value="Student" required style="margin-right: 8px;">
+          Student
+        </label>
+        <label style="display: flex; align-items: center;">
+          <input type="radio" name="Submitted By" value="Parent" required style="margin-right: 8px;">
+          Parent
+        </label>
+      </div>
+
+      <input type="hidden" name="redirect" value="https://mineworkgg.netlify.app/thankyou.html">
+      <button type="submit" class="cta-button full">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ CSS Fix -->
+<style>
+  /* Prevent mobile zoom */
+  input, textarea, select, button {
+    font-size: 16px;
+  }
+
+  /* ✅ Overlay Style */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  /* ✅ Popup Box */
+  .popup-content {
+    background: #fff;
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    position: relative;
+    animation: fadeIn 0.4s ease-in-out;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ✅ Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #444;
+  }
+
+  /* ✅ Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* ✅ CTA Button Style */
+  .cta-button.full {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button.full:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<!-- ✅ SCRIPT -->
+<script>
+  function openPopup4() {
+    document.getElementById("popup4").style.display = "flex";
+  }
+
+  function closePopup4() {
+    document.getElementById("popup4").style.display = "none";
+  }
+
+  function showPayment4() {
+    document.getElementById("paymentSection4").style.display = "block";
+    document.getElementById("formArea4").style.display = "block";
+  }
+
+  function copyUPI4() {
+    const upi = "realrahulmalhotra@fam";
+    navigator.clipboard.writeText(upi).then(() => {
+      alert("UPI ID copied: " + upi);
+    });
+  }
+</script>
+
 
 <!-- ✅ JS LOGIC -->
 <script>
@@ -756,13 +1080,7 @@ function closePopup() {
   }
 </style>
 
-      <div class="batch-card searchable-card">
-        <h3>Shaurya NEET Elite</h3>
-        <p>Start: 01 Aug 2025 | End: 30 Jun 2026</p>
-        <p>Fast track mentorship for toppers</p>
-        <a href="#" class="cta-button">Enroll Now ₹7,000</a>
-      </div>
-    </div>
+      
 
     <div style="display: flex; justify-content: center; margin-top: 30px;">
   <div class="hotline">📞 Contact TG ID: 7254930178</div>
